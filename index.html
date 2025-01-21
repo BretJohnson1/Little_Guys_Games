@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Guys Games</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            color: #fff;
+            font-family: 'Press Start 2P', cursive;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            cursor: url('https://www.seekpng.com/png/detail/398-3985187_piq-mouse-pointer-pixel-art-by-cesarloose-pixel.png'), auto;
+        }
+
+        /* Main Menu Container */
+        .menu-container {
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .menu-title {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .menu-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .menu-button {
+            background: none;
+            color: #fff;
+            border: 2px solid #fff;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .menu-button:hover {
+            background-color: #0077ff;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .menu-button:active {
+            transform: scale(0.95);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Section Styling */
+        .start-section, .options-section {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #1a1a1a;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .start-content, .options-content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-menu-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: none;
+            color: #fff;
+            border: 2px solid #fff;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .main-menu-button:hover {
+            background-color: #0077ff;
+            color: #fff;
+        }
+
+        /* Video and Text Styling */
+        .start-video {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .start-text {
+            margin-top: 2rem;
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+
+        /* Description Box */
+        .description-box {
+            background-color: #333;
+            border: 2px solid #fff;
+            width: 80%;
+            max-width: 800px;
+            padding: 2rem;
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            text-align: justify;
+            color: #fff;
+            overflow-y: auto;
+            max-height: 200px;
+            border-radius: 8px;
+            align-self: center;
+        }
+
+        /* Options Section */
+        .options-title {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .options-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .options-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.2rem;
+            color: #fff;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .options-link:hover {
+            transform: scale(1.1);
+            color: #0077ff;
+        }
+
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+            background-color: #fff;
+            padding: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Menu -->
+    <div class="menu-container">
+        <div class="menu-title">Little Guys Games</div>
+        <div class="menu-buttons">
+            <button class="menu-button" onmouseover="playHoverSound()" onclick="navigateTo('start')">Start</button>
+            <button class="menu-button" onmouseover="playHoverSound()" onclick="navigateTo('options')">Options</button>
+            <button class="menu-button" onmouseover="playHoverSound()" onclick="closePage()">Quit</button>
+        </div>
+    </div>
+
+    <audio id="hoverSound" src="path_to_your_sound_file/hover-sound.wav"></audio>
+
+    <!-- Start Section -->
+    <div id="startSection" class="start-section">
+        <button class="main-menu-button" onclick="navigateTo('menu')">Main Menu</button>
+        <div class="start-content">
+            <video id="startVideo" class="start-video" controls autoplay>
+                <source src="your_video_path.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="start-text">Let Me Explain...</div>
+            <div class="description-box">
+                Founded in 2025, Little Guys Games is an independent game studio based in Tulsa, OK, with a mission to support and empower new game developers. Born out of the challenges faced by our founder during their own journey into game development, the studio was created as a space where aspiring developers can learn, grow, and build a portfolio while collaborating with a team of passionate peers.
+
+At Little Guys Games, we believe that everyone deserves a chance to pursue their dreams, regardless of their background or level of experience. We provide opportunities for driven individuals to gain hands-on experience, overcome barriers to entry in the industry, and prepare for their next steps—whether that’s joining a AAA studio or continuing to create innovative games with us.
+
+Our team understands what it’s like to start small but dream big. Thanks to faith, family, and friends, we’ve turned this vision into reality, and we’re excited to help others do the same. Little Guys Games is made by the little guys, for the little guys, because that's who we are, and that's who we care about.
+            </div>
+        </div>
+    </div>
+
+    <!-- Options Section -->
+    <div id="optionsSection" class="options-section">
+        <button class="main-menu-button" onclick="navigateTo('menu')">Main Menu</button>
+        <div class="options-content">
+            <h2 class="options-title">Little Guys Games is not a big studio, we need your help and support!</h2>
+            <div class="options-links">
+                <a href="https://www.youtube.com/@LittleGuysGames" target="_blank" class="options-link">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube Logo" class="social-icon">
+                    YouTube
+                </a>
+                <a href="https://www.instagram.com/little_guys_games?igsh=MWI5Ymw2MHNlbGFj" target="_blank" class="options-link">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" class="social-icon">
+                    Instagram
+                </a>
+                <a href="https://discord.gg/yQmZ8gGG" target="_blank" class="options-link">
+                    <img src="/mnt/data/discord-logo-transparent-chat-7.png" alt="Discord Logo" class="social-icon">
+                    Discord
+                </a>
+                <a href="https://www.kickstarter.com/projects/shoptillyoudrop/shop-till-you-drop" target="_blank" class="options-link">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Kickstarter_logo_k_2019.svg" alt="Kickstarter Logo" class="social-icon">
+                    Kickstarter
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function playHoverSound() {
+            const hoverSound = document.getElementById('hoverSound');
+            hoverSound.currentTime = 0;
+            hoverSound.play();
+        }
+
+        function navigateTo(section) {
+            const startSection = document.getElementById('startSection');
+            const optionsSection = document.getElementById('optionsSection');
+            const menuContainer = document.querySelector('.menu-container');
+
+            startSection.style.display = 'none';
+            optionsSection.style.display = 'none';
+            menuContainer.style.display = 'none';
+
+            if (section === 'start') {
+                startSection.style.display = 'flex';
+                setTimeout(() => startSection.style.opacity = 1, 100);
+            } else if (section === 'options') {
+                optionsSection.style.display = 'flex';
+                setTimeout(() => optionsSection.style.opacity = 1, 100);
+            } else if (section === 'menu') {
+                menuContainer.style.display = 'block';
+            }
+        }
+
+        function closePage() {
+            alert("Goodbye!");
+        }
+    </script>
+</body>
+</html>
