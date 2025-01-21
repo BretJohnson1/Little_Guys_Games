@@ -33,6 +33,12 @@
             animation: fadeIn 1.5s ease-in-out;
         }
 
+        .menu-image {
+            margin-bottom: 1.5rem;
+            width: 300px;
+            height: auto;
+        }
+
         .menu-title {
             font-size: 2rem;
             margin-bottom: 3rem;
@@ -71,29 +77,6 @@
             to { opacity: 1; }
         }
 
-        /* Section Styling */
-        .start-section, .options-section {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background-color: #1a1a1a;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-
-        .start-content, .options-content {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
         .main-menu-button {
             position: absolute;
             top: 20px;
@@ -113,10 +96,27 @@
             color: #fff;
         }
 
-        /* Video and Text Styling */
-        .start-video {
+        /* Start Section Styling */
+        .start-section {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 900px;
+            height: 100vh;
+            background-color: #1a1a1a;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .start-content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .start-text {
@@ -125,7 +125,6 @@
             text-transform: uppercase;
         }
 
-        /* Description Box */
         .description-box {
             background-color: #333;
             border: 2px solid #fff;
@@ -139,10 +138,39 @@
             overflow-y: auto;
             max-height: 200px;
             border-radius: 8px;
-            align-self: center;
         }
 
-        /* Options Section */
+        .start-video {
+            width: 600px; /* Set a fixed width */
+    height: 600px; /* Set a fixed height */
+    max-width: 100%; /* Ensure responsiveness */
+    max-height: 100%; /* Ensure responsiveness */
+    aspect-ratio: 1 / 1; 
+        }
+
+        /* Options Section Styling */
+        .options-section {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #1a1a1a;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .options-content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
         .options-title {
             font-size: 1.5rem;
             margin-bottom: 2rem;
@@ -178,16 +206,105 @@
             background-color: #fff;
             padding: 2px;
         }
+
+        /* Apply Section Styling */
+        .apply-section {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #1a1a1a;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .apply-content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .apply-form {
+            background-color: #333;
+            border: 2px solid #fff;
+            border-radius: 8px;
+            padding: 2rem;
+            width: 200%;
+            max-width: 1900px;
+            text-align: left;
+            font-size: 1rem;
+        }
+
+        .form-field {
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-field label {
+            margin-bottom: 0.5rem;
+        }
+
+        .form-field input, .form-field textarea {
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-submit {
+            background-color: #0077ff;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit:hover {
+            background-color: #005bb5;
+        }
+
+        /* Quit Section Styling */
+        .quit-section {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #1a1a1a;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .quit-content {
+            text-align: center;
+            font-size: 2rem;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
     <!-- Main Menu -->
     <div class="menu-container">
+        <img src="https://i.postimg.cc/R0p6d7kF/1000003017-1.jpg" alt="Logo" class="menu-image">
         <div class="menu-title">Little Guys Games</div>
         <div class="menu-buttons">
             <button class="menu-button" onmouseover="playHoverSound()" onclick="navigateTo('start')">Start</button>
             <button class="menu-button" onmouseover="playHoverSound()" onclick="navigateTo('options')">Options</button>
-            <button class="menu-button" onmouseover="playHoverSound()" onclick="closePage()">Quit</button>
+            <button class="menu-button" onmouseover="playHoverSound()" onclick="navigateTo('apply')">Apply</button>
+            <button class="menu-button" onmouseover="playHoverSound()" onclick="navigateTo('quit')">Quit</button>
         </div>
     </div>
 
@@ -197,10 +314,15 @@
     <div id="startSection" class="start-section">
         <button class="main-menu-button" onclick="navigateTo('menu')">Main Menu</button>
         <div class="start-content">
-            <video id="startVideo" class="start-video" controls autoplay>
-                <source src="your_video_path.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <iframe
+    id="startVideo"
+    class="start-video"
+    src="https://www.youtube.com/embed/8y43hm29eWY?autoplay=1&controls=1"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+</iframe>
             <div class="start-text">Let Me Explain...</div>
             <div class="description-box">
                 Founded in 2025, Little Guys Games is an independent game studio based in Tulsa, OK, with a mission to support and empower new game developers. Born out of the challenges faced by our founder during their own journey into game development, the studio was created as a space where aspiring developers can learn, grow, and build a portfolio while collaborating with a team of passionate peers.
@@ -227,15 +349,44 @@ Our team understands what it’s like to start small but dream big. Thanks to fa
                     Instagram
                 </a>
                 <a href="https://discord.gg/yQmZ8gGG" target="_blank" class="options-link">
-                    <img src="/mnt/data/discord-logo-transparent-chat-7.png" alt="Discord Logo" class="social-icon">
+                    <img src="https://clipartcraft.com/images/discord-logo-transparent-chat-7.png" alt="Discord Logo" class="social-icon">
                     Discord
                 </a>
                 <a href="https://www.kickstarter.com/projects/shoptillyoudrop/shop-till-you-drop" target="_blank" class="options-link">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Kickstarter_logo_k_2019.svg" alt="Kickstarter Logo" class="social-icon">
+                    <img src="https://cdn.freebiesupply.com/logos/large/2x/kickstarter-2-logo-png-transparent.png" alt="Kickstarter Logo" class="social-icon">
                     Kickstarter
                 </a>
             </div>
         </div>
+    </div>
+
+    <!-- Apply Section -->
+    <div id="applySection" class="apply-section">
+        <button class="main-menu-button" onclick="navigateTo('menu')">Main Menu</button>
+        <div class="apply-content">
+            <form class="apply-form" action="mailto:bretjohnson004@gmail.com" method="post" enctype="text/plain">
+                <h2>Apply Now</h2>
+                <div class="form-field">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-field">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-field">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="form-submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Quit Section -->
+    <div id="quitSection" class="quit-section">
+        <button class="main-menu-button" onclick="navigateTo('menu')">Main Menu</button>
+        <div class="quit-content">Thanks for stopping by!</div>
     </div>
 
     <script>
@@ -248,10 +399,14 @@ Our team understands what it’s like to start small but dream big. Thanks to fa
         function navigateTo(section) {
             const startSection = document.getElementById('startSection');
             const optionsSection = document.getElementById('optionsSection');
+            const applySection = document.getElementById('applySection');
+            const quitSection = document.getElementById('quitSection');
             const menuContainer = document.querySelector('.menu-container');
 
             startSection.style.display = 'none';
             optionsSection.style.display = 'none';
+            applySection.style.display = 'none';
+            quitSection.style.display = 'none';
             menuContainer.style.display = 'none';
 
             if (section === 'start') {
@@ -260,13 +415,15 @@ Our team understands what it’s like to start small but dream big. Thanks to fa
             } else if (section === 'options') {
                 optionsSection.style.display = 'flex';
                 setTimeout(() => optionsSection.style.opacity = 1, 100);
+            } else if (section === 'apply') {
+                applySection.style.display = 'flex';
+                setTimeout(() => applySection.style.opacity = 1, 100);
+            } else if (section === 'quit') {
+                quitSection.style.display = 'flex';
+                setTimeout(() => quitSection.style.opacity = 1, 100);
             } else if (section === 'menu') {
                 menuContainer.style.display = 'block';
             }
-        }
-
-        function closePage() {
-            alert("Goodbye!");
         }
     </script>
 </body>
