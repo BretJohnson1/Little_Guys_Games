@@ -1,0 +1,26 @@
+{
+  "name": "website",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "client": "vite",
+    "dev": "concurrently \"vite\" \"node server/server.js\"",
+    "build": "vite build",
+    "preview": "vite preview",
+    "server": "node server/server.js",
+    "docker:build": "wsl docker build -t api-server:latest ."
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "vite": "^6.0.5"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "normalize.css": "^8.0.1",
+    "resend": "^4.1.1"
+  }
+}

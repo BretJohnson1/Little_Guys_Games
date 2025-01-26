@@ -1,0 +1,28 @@
+<!-- Apply Section -->
+<div id="applySection" class="apply-section">
+    <button class="main-menu-button" onclick="navigateTo('menu')">Main Menu</button>
+    <div class="apply-content">
+        <form class="apply-form" action="mailto:bretjohnson004@gmail.com" method="post" enctype="text/plain">
+            <h2>Apply Now</h2>
+            <div class="form-field">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-field">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-field">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="form-submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+<!-- Quit Section -->
+<div id="quitSection" class="quit-section">
+    <button class="main-menu-button" onclick="navigateTo('menu')">Main Menu</button>
+    <div class="quit-content">Thanks for stopping by!</div>
+</div>

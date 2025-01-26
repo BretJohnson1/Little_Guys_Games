@@ -1,0 +1,46 @@
+.start-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70vh auto;
+    min-height: 100vh;
+}
+
+.vid-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &>iframe {
+        width: 600px;
+        height: 600px;
+        max-width: 100%;
+        max-height: 100%;
+        aspect-ratio: 1 / 1;
+        border: none;
+    }
+
+}
+
+.explainer {
+    background-color: #282828;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 4rem 0;
+
+    &>h2 {
+        text-align: center;
+        padding: 2rem;
+        text-transform: uppercase;
+        font-size: 2.2rem;
+    }
+}
+
+.gutters {
+    margin: 0 auto;
+    max-width: 44ch;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
