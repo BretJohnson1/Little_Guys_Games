@@ -1,0 +1,23 @@
+:root {
+    --background-color: #1a1a1a;
+    --background-card: #333;
+    --text-color: #fff;
+    --blue: #0077ff;
+    --blue-dark: #005bb5;
+    color: var(--text-color);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: url('/media/images/custom_cursor.png'), auto;
+    font-family: 'Press Start 2P', cursive;
+}
+
+body {
+    background-color: var(--background-color);
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}

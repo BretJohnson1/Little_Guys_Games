@@ -1,0 +1,76 @@
+.menu-container {
+    opacity: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.page-wrapper {
+    overflow-y: auto;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0;
+
+    scrollbar-width: thin;
+    scrollbar-color: #a6a6a6 #00032e;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+      }
+    
+      &::-webkit-scrollbar-track {
+        background: #00032e;
+      }
+    
+      &::-webkit-scrollbar-thumb {
+        background-color: #a6a6a6;
+        border-radius: 12px;
+        border: 2px groove #000000;
+      }
+}
+
+
+.menu-image {
+    margin-bottom: 1.5rem;
+    width: 420px;
+    height: auto;
+}
+
+.menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.menu-button {
+    background: none;
+    color: var(--text-color);
+    border: 2px solid var(--text-color);
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+
+    &.main {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        letter-spacing: normal;
+    }
+
+    &:hover {
+        background-color: var(--blue);
+        transform: scale(1.1);
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+
+}
